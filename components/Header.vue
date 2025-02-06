@@ -19,7 +19,7 @@
                     ></Button>
 
                     <Button
-                        v-if="categories && categories.length > 3"
+                        v-if="categories && categories.length > 0"
                         icon="menu"
                         @click="uiStore.toggleItem('menu-sidebar')"
                         variant="clear"
@@ -29,25 +29,28 @@
                     <PlayButton class="d-none d-lg-inline-flex" />
                 </div>
                 <div class="col d-flex align-center">
-                    <NuxtImg
-                        preload
-                        class="header__logo d-none d-md-block"
-                        src="/logo.svg"
-                        :alt="$t('store_name')"
-                    />
 
                     <Button
+                        tag="a"
+                        href="/"
                         variant="clear"
-                        class="header__logo-icon d-md-none mx-auto"
-                        @click="scrollToTop"
-                        :aria-label="$t('buttons.go_to_top')"
+                        class="header__scripts-btn mx-auto"
+                        :aria-label="$t('buttons.go_to_home')"
                     >
-                        <NuxtImg
-                            src="/logo-icon.svg"
-                            :alt="$t('store_name')"
-                            width="16"
-                        />
+                        Home
                     </Button>
+
+                    <Button
+                        tag="a"
+                        href="/scripts"
+                        variant="clear"
+                        class="header__scripts-btn mx-auto"
+                        :aria-label="$t('buttons.go_to_scripts')"
+                    >
+                        Scripts
+                    </Button>
+
+
                 </div>
                 <div class="col d-flex justify-end align-center ga-4">
                     <ClientOnly>
